@@ -1,0 +1,485 @@
+.model-training {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+}
+
+.training-header {
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.training-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.training-header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.training-container {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+.config-panel {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  height: fit-content;
+}
+
+.config-panel h2 {
+  margin-bottom: 25px;
+  color: #2d3748;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 10px;
+}
+
+.config-section {
+  margin-bottom: 25px;
+}
+
+.config-section label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.config-section select {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.config-section select:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.config-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+.config-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.config-item label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #2d3748;
+  font-size: 14px;
+}
+
+.config-item input {
+  padding: 10px;
+  border: 2px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.config-item input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.training-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.train-btn, .stop-btn {
+  flex: 1;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.train-btn {
+  background: linear-gradient(135deg, #48bb78, #38a169);
+  color: white;
+}
+
+.train-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(72, 187, 120, 0.4);
+}
+
+.train-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.stop-btn {
+  background: #e53e3e;
+  color: white;
+}
+
+.stop-btn:hover:not(:disabled) {
+  background: #c53030;
+  transform: translateY(-2px);
+}
+
+.stop-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.progress-panel {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.progress-panel h2 {
+  margin-bottom: 25px;
+  color: #2d3748;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 10px;
+}
+
+.progress-container {
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 30px;
+}
+
+.progress-container.training {
+  border-color: #48bb78;
+}
+
+.progress-container.completed {
+  border-color: #38a169;
+}
+
+.progress-container.stopped {
+  border-color: #e53e3e;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.status-indicator {
+  font-weight: 600;
+}
+
+.progress-percent {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2d3748;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  background: #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #48bb78, #68d391);
+  border-radius: 10px;
+  transition: width 0.3s ease;
+  position: relative;
+}
+
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.training-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.metric {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background: #f7fafc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.metric span:first-child {
+  font-weight: 600;
+  color: #4a5568;
+}
+
+.training-results {
+  text-align: center;
+}
+
+.training-results h3 {
+  color: #38a169;
+  margin-bottom: 20px;
+}
+
+.result-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.stat {
+  background: #f0fff4;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #c6f6d5;
+}
+
+.stat .value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #38a169;
+  margin-top: 5px;
+}
+
+.result-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.deploy-btn, .export-btn, .test-btn {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.deploy-btn {
+  background: #667eea;
+  color: white;
+}
+
+.export-btn {
+  background: #ed8936;
+  color: white;
+}
+
+.test-btn {
+  background: #9f7aea;
+  color: white;
+}
+
+.deploy-btn:hover { background: #5a67d8; }
+.export-btn:hover { background: #dd6b20; }
+.test-btn:hover { background: #805ad5; }
+
+.performance-chart {
+  background: #f7fafc;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.performance-chart h3 {
+  margin-bottom: 15px;
+  color: #2d3748;
+}
+
+.chart-placeholder {
+  text-align: center;
+  color: #718096;
+}
+
+.chart-bars {
+  display: flex;
+  justify-content: space-around;
+  align-items: end;
+  height: 200px;
+  margin-top: 20px;
+}
+
+.chart-bar {
+  width: 60px;
+  background: #667eea;
+  border-radius: 4px 4px 0 0;
+  position: relative;
+  transition: height 0.3s ease;
+}
+
+.chart-bar.accuracy { background: #48bb78; }
+.chart-bar.precision { background: #ed8936; }
+.chart-bar.recall { background: #ed64a6; }
+.chart-bar.f1 { background: #9f7aea; }
+
+.chart-bar span {
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.training-history {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.training-history h2 {
+  margin-bottom: 25px;
+  color: #2d3748;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 10px;
+}
+
+.history-table {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+  background: #f7fafc;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-badge.deployed {
+  background: #c6f6d5;
+  color: #22543d;
+}
+
+.status-badge.archived {
+  background: #fed7d7;
+  color: #742a2a;
+}
+
+.table-btn {
+  padding: 6px 12px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  margin-right: 5px;
+  transition: all 0.3s ease;
+}
+
+.table-btn:hover {
+  background: #667eea;
+  color: white;
+  border-color: #667eea;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .training-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .config-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .training-container {
+    gap: 20px;
+  }
+  
+  .config-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .training-metrics {
+    grid-template-columns: 1fr;
+  }
+  
+  .result-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .result-actions {
+    flex-direction: column;
+  }
+  
+  .chart-bars {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    gap: 20px;
+  }
+  
+  .chart-bar {
+    width: 80%;
+    height: 40px !important;
+  }
+  
+  .chart-bar span {
+    position: static;
+    transform: none;
+    margin-top: 5px;
+  }
+}

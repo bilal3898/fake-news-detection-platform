@@ -1,0 +1,69 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+metadata:
+  name: fake-news-detection
+  namespace: fake-news-detection
+
+resources:
+  - namespace.yaml
+  - configmap.yaml
+  - secrets.yaml
+  - postgres-deployment.yaml
+  - mongodb-deployment.yaml
+  - redis-deployment.yaml
+  - backend-deployment.yaml
+  - frontend-deployment.yaml
+  - celery-deployment.yaml
+  - ingress.yaml
+  - hpa.yaml
+  - monitoring.yaml
+
+commonLabels:
+  app.kubernetes.io/name: fake-news-detection
+  app.kubernetes.io/version: "1.2.0"
+  app.kubernetes.io/component: backend
+  app.kubernetes.io/managed-by: kustomize
+
+commonAnnotations:
+  config.kubernetes.io/origin: fake-news-detection-platform
+
+patchesStrategicMerge:
+  - patches/backend-prod.yaml
+  - patches/frontend-prod.yaml
+
+images:
+  - name: fake-news-backend
+    newTag: "1.2.0"
+  - name: fake-news-frontend
+    newTag: "1.2.0"
+
+replicas:
+  - name: backend
+    count: 3
+  - name: frontend
+    count: 2
+  - name: celery-worker
+    count: 2
+
+configMapGenerator:
+  - name: fake-news-config
+    literals:
+      - LOG_LEVEL=INFO
+      - ENVIRONMENT=production
+      - MAX_WORKERS=4
+
+secretGenerator:
+  - name: fake-news-secrets
+    literals:
+      - SECRET_KEY=your-production-secret-key
+      - JWT_SECRET_KEY=your-production-jwt-secret
+
+vars:
+  - name: DOMAIN
+    objref:
+      kind: ConfigMap
+      name: fake-news-config
+      apiVersion: v1
+    fieldref:
+      fieldpath: data.DOMAIN

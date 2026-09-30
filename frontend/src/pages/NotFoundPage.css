@@ -1,0 +1,58 @@
+.notfound-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #60a5fa, #9333ea);
+  font-family: 'Inter', sans-serif;
+  padding: 2rem;
+}
+
+.notfound-container {
+  text-align: center;
+  color: #f3f4f6;
+  max-width: 500px;
+}
+
+.notfound-title {
+  font-size: 8rem;
+  font-weight: 900;
+  color: #ffffff;
+  text-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  animation: float 3s ease-in-out infinite;
+}
+
+.notfound-subtitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+}
+
+.notfound-text {
+  font-size: 1rem;
+  margin-top: 0.75rem;
+  color: #e0e7ff;
+}
+
+.notfound-btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  background: linear-gradient(90deg, #4f46e5, #9333ea);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.notfound-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
+}
+
+/* Float animation for 404 text */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}

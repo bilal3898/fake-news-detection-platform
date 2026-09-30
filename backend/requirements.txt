@@ -1,0 +1,35 @@
+# Core
+fastapi==0.104.1
+uvicorn==0.24.0
+
+# ML & Data Processing
+scikit-learn==1.3.2
+pandas==2.1.3
+numpy==1.26.2
+nltk==3.8.1
+transformers==4.35.2
+torch==2.1.1
+
+# Web Scraping & Data Ingestion
+newspaper3k==0.2.8
+beautifulsoup4==4.12.2
+requests==2.31.0
+
+# Database & Cache
+pymongo==4.6.1
+redis==5.0.1
+
+# Task Queue
+celery==5.3.4
+
+# Other Utilities
+python-multipart==0.0.6
+pydantic==2.5.0
+joblib==1.3.2
+Pillow>=9.0.0
+pytesseract>=0.3.10
+
+sqlalchemy==2.0.23
+psycopg2-binary==2.9.9
+asyncpg==0.29.0
+alembic==1.12.1  # For database migrations

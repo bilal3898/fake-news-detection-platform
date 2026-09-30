@@ -1,0 +1,19 @@
+{
+  "id": "dbb09b47-38ef-43bd-b96a-18ed75144fc5",
+  "name": "Model-dbb09b47-38ef-43bd-b96a-18ed75144fc5",
+  "algorithm": "random-forest",
+  "dataset": "LIAR Dataset",
+  "accuracy": 0.2431640625,
+  "precision": 0.24545309704255944,
+  "recall": 0.2431640625,
+  "f1_score": 0.23355766986702753,
+  "status": "trained",
+  "created_at": "2025-09-29T02:35:47.462150",
+  "training_time": 15.236084222793579,
+  "parameters": {
+    "epochs": 10,
+    "batch_size": 32,
+    "learning_rate": 0.001,
+    "test_size": 0.2
+  }
+}

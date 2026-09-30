@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: fake-news-config
+  namespace: fake-news-detection
+data:
+  DATABASE_URL: "postgresql://postgres:password@postgres:5432/fake_news_db"
+  MONGODB_URL: "mongodb://admin:password@mongodb:27017/fake_news?authSource=admin"
+  REDIS_URL: "redis://redis:6379/0"
+  CELERY_BROKER_URL: "redis://redis:6379/1"
+  CELERY_RESULT_BACKEND: "redis://redis:6379/2"
+  LOG_LEVEL: "INFO"
+  MODEL_PATH: "/app/models"
+  VECTORIZER_PATH: "/app/models/vectorizers"
+  MAX_FILE_SIZE: "10485760"
+  RATE_LIMIT_PER_MINUTE: "60"
+  RATE_LIMIT_PER_HOUR: "1000"

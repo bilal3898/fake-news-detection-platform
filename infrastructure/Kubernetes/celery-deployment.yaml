@@ -1,0 +1,80 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: celery-worker
+  namespace: fake-news-detection
+  labels:
+    app: celery-worker
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: celery-worker
+  template:
+    metadata:
+      labels:
+        app: celery-worker
+    spec:
+      containers:
+      - name: celery-worker
+        image: fake-news-backend:latest
+        command: ["celery", "-A", "backend.app.celery", "worker", "--loglevel=info"]
+        envFrom:
+        - configMapRef:
+            name: fake-news-config
+        - secretRef:
+            name: fake-news-secrets
+        volumeMounts:
+        - name: models-volume
+          mountPath: /app/models
+          readOnly: true
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "500m"
+          limits:
+            memory: "2Gi"
+            cpu: "1000m"
+      volumes:
+      - name: models-volume
+        persistentVolumeClaim:
+          claimName: models-pvc
+      imagePullSecrets:
+      - name: registry-secret
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: celery-beat
+  namespace: fake-news-detection
+  labels:
+    app: celery-beat
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: celery-beat
+  template:
+    metadata:
+      labels:
+        app: celery-beat
+    spec:
+      containers:
+      - name: celery-beat
+        image: fake-news-backend:latest
+        command: ["celery", "-A", "backend.app.celery", "beat", "--loglevel=info"]
+        envFrom:
+        - configMapRef:
+            name: fake-news-config
+        - secretRef:
+            name: fake-news-secrets
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+      imagePullSecrets:
+      - name: registry-secret

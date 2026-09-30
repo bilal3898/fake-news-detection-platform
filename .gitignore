@@ -1,0 +1,806 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+log/
+*.out
+*.err
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+*.sql
+
+# ML Models and Data
+models/
+*.pkl
+*.pickle
+*.joblib
+*.h5
+*.hdf5
+*.pb
+*.ckpt
+*.pth
+*.pt
+model_*
+dataset/raw/*
+dataset/processed/*
+!dataset/raw/.gitkeep
+!dataset/processed/.gitkeep
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*.ipynb
+
+# Testing
+.coverage
+.pytest_cache/
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+.hypothesis/
+
+# Documentation
+docs/_build/
+site/
+
+# Package files
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Configuration files with secrets
+config.py
+.env.local
+.env.development
+.env.test
+.env.production
+secrets.json
+credentials.json
+
+# Node.js (for frontend)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.eslintcache
+
+# Frontend build artifacts
+frontend/build/
+frontend/dist/
+frontend/.next/
+frontend/out/
+
+# Cache
+.cache/
+*.tmp
+*.temp
+.cache/
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variables file
+.env
+.env.test
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+.parcel-cache
+
+# Next.js build output
+.next
+
+# Nuxt.js build / generate output
+.nuxt
+dist
+
+# Gatsby files
+.cache/
+public
+
+# Storybook build outputs
+.out
+.storybook-out
+
+# Temporary folders
+tmp/
+temp/
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Windows
+*.lnk
+
+# MacOS
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+
+# Redis dump file
+dump.rdb
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# MongoDB
+mongod.lock
+
+# PostgreSQL
+*.sql
+
+# NLTK data
+nltk_data/
+
+# spaCy models
+en_core_web_*
+xx_ent_wiki_sm*
+
+# Transformers cache
+transformers_cache/
+.huggingface/
+
+# TensorFlow
+checkpoint*
+
+# PyTorch
+*.pth
+
+# Scikit-learn
+model_*.pkl
+
+# Pandas
+*.parquet
+
+# Excel files
+*.xlsx
+*.xls
+
+# CSV files (keep sample data)
+*.csv
+!data/sample/*.csv
+
+# Audio/Video files
+*.mp4
+*.avi
+*.mov
+*.mp3
+*.wav
+
+# Images (except docs)
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.tiff
+!docs/images/
+!docs/img/
+
+# PDF files
+*.pdf
+!docs/*.pdf
+
+# Docker
+.dockerignore
+
+# Kubernetes
+*.kubeconfig
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+
+# Ansible
+*.retry
+
+# Local development
+local/
+dev/
+development/
+
+# Test files
+test_*.py
+*_test.py
+tests/
+!tests/__init__.py
+
+# Performance profiling
+*.prof
+*.profile
+
+# Memory dumps
+*.hprof
+*.dump
+
+# Security
+*.pem
+*.key
+*.crt
+*.p12
+
+# Monitoring
+prometheus_data/
+grafana_data/
+
+# Backup and archives
+backups/
+archives/
+
+# User uploads
+uploads/
+static/uploads/
+media/
+
+# Session files
+sessions/
+*.session
+
+# Lock files
+*.lock
+
+# Compiled binaries
+*.exe
+*.dll
+*.dylib
+*.so
+
+# Package managers
+Pipfile.lock
+poetry.lock
+yarn.lock
+package-lock.json
+
+# Linting
+.flake8
+.pycodestyle
+.pylintrc
+
+# Type checking
+.mypy_cache/
+.pyre/
+
+# Formatting
+.black
+
+# Pre-commit
+.pre-commit-config.yaml
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+.travis.yml
+.circleci/
+
+# Documentation
+docs/_build/
+docs/build/
+
+# API documentation
+api_docs/
+
+# Swagger/OpenAPI
+swagger.json
+swagger.yaml
+
+# Postman collections
+*.postman_collection.json
+
+# Database migrations (keep structure)
+migrations/versions/*.py
+!migrations/versions/__init__.py
+
+# Redis
+*.rdb
+
+# Elasticsearch
+elasticsearch_data/
+
+# RabbitMQ
+rabbitmq_data/
+
+# Apache Kafka
+kafka-logs/
+
+# Zookeeper
+zookeeper_data/
+
+# Hadoop
+hadoop_tmp/
+
+# Spark
+spark-warehouse/
+
+# Airflow
+airflow.cfg
+airflow.db
+logs/
+plugins/
+
+# Jupyter
+jupyter_notebook_config.py
+
+# Lab notebooks
+*.ipynb
+
+# Research notebooks
+research/
+notebooks/
+
+# Data science artifacts
+experiments/
+mlruns/
+wandb/
+
+# Model artifacts
+artifacts/
+models/
+checkpoints/
+
+# Data processing
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# External data sources
+external_data/
+third_party_data/
+
+# Temporary analysis
+analysis/
+temp_analysis/
+
+# Reports
+reports/
+*.html
+!docs/*.html
+
+# Slides
+slides/
+*.pptx
+*.key
+
+# Spreadsheets
+*.xlsx
+*.xls
+*.ods
+
+# Configuration overrides
+config/local.py
+config/development.py
+config/production.py
+config/testing.py
+
+# Environment specific
+.env.local
+.env.development
+.env.production
+.env.staging
+.env.test
+
+# Secrets and keys
+secrets/
+keys/
+certificates/
+ssl/
+
+# Backup configurations
+config_backup/
+settings_backup/
+
+# Local databases
+local_db/
+test_db/
+
+# Cache directories
+cache/
+__pycache__/
+.pytest_cache/
+
+# Build artifacts
+build/
+dist/
+target/
+
+# Package files
+*.egg
+*.egg-info/
+MANIFEST
+
+# Testing artifacts
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Documentation artifacts
+docs/_build/
+docs/build/
+
+# IDE specific
+.vscode/settings.json
+.idea/workspace.xml
+
+# OS specific
+Thumbs.db
+.DS_Store
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# Log files
+*.log
+logs/
+log/
+
+# Runtime files
+*.pid
+*.sock
+
+# Core dumps
+core
+core.*
+
+# Memory dumps
+*.hprof
+*.dump
+
+# Stack traces
+*.stackdump
+
+# Error reports
+error_reports/
+crash_logs/
+
+# Performance data
+performance/
+profiling/
+benchmarking/
+
+# Monitoring data
+metrics/
+monitoring/
+alerts/
+
+# Backup files
+backup/
+backups/
+archive/
+
+# Version control
+.svn/
+.hg/
+
+# Package manager caches
+.pip-cache/
+.npm/
+.yarn/
+
+# Build tools
+.gradle/
+.m2/
+target/
+
+# Container runtimes
+.docker/
+
+# Cloud provider files
+.aws/
+.azure/
+.gcp/
+
+# Kubernetes
+.kube/
+kubectl/
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+
+# Ansible
+.ansible/
+*.retry
+
+# CI/CD pipelines
+.jenkins/
+.gitlab-ci/
+.travis/
+
+# Local development
+.local/
+dev/
+staging/
+testing/
+
+# User data
+user_data/
+user_content/
+user_uploads/
+
+# Temporary analysis
+temp/
+tmp/
+scratch/
+
+# Experimental features
+experimental/
+beta/
+alpha/
+
+# Deprecated code
+deprecated/
+legacy/
+old/
+
+# Security
+.secrets/
+.keys/
+.certs/
+.ssl/
+
+# Performance monitoring
+.newrelic/
+.datadog/
+.splunk/
+
+# Load testing
+.jmeter/
+.k6/
+.locust/
+
+# API testing
+.postman/
+.insomnia/
+
+# Database tools
+.sqldeveloper/
+.dbeaver/
+.tableplus/
+
+# Git hooks
+.husky/
+.git/hooks/
+
+# Pre-commit
+.pre-commit/
+.flake8/
+.black/
+
+# Documentation tools
+.sphinx/
+.mkdocs/
+
+# Static analysis
+.sonar/
+.coverage/
+.pylint/
+
+# Code quality
+.codeclimate/
+.codacy/
+
+# Security scanning
+.bandit/
+.safety/
+.snyk/
+
+# Dependency management
+.pip-tools/
+.poetry/
+.pipenv/
+
+# Container orchestration
+.docker-compose.override.yml
+docker-compose.local.yml
+
+# Environment files
+.envrc
+.env.example
+.env.template
+
+# Configuration files
+config.local.json
+settings.local.py
+parameters.local.yml
+
+# Database
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# nyc test coverage
+.nyc_output
+
+# Grunt intermediate storage (https://gruntjs.com/creating-plugins#storing-task-files)
+.grunt
+
+# Bower dependency directory (https://bower.io/)
+bower_components
+
+# node-waf configuration
+.lock-wscript
+
+# Compiled binary addons (https://nodejs.org/api/addons.html)
+build/Release
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# TypeScript v1 declaration files
+typings/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variables file
+.env
+.env.test
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+.parcel-cache
+
+# Next.js build output
+.next
+
+# Nuxt.js build / generate output
+.nuxt
+dist
+
+# Gatsby files
+.cache/
+public
+
+# Storybook build outputs
+.out
+.storybook-out
+
+# Temporary folders
+tmp/
+temp/
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

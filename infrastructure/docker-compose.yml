@@ -1,0 +1,37 @@
+version: "3.9"
+services:
+  backend:
+    build:
+      context: ..
+      dockerfile: infrastructure/Dockerfile.backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ../backend:/app
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ..
+      dockerfile: infrastructure/Dockerfile.frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ../frontend:/app
+    depends_on:
+      - backend
+
+  db:
+    image: postgres:14
+    environment:
+      POSTGRES_USER: bilal
+      POSTGRES_PASSWORD: bilal123
+      POSTGRES_DB: fakenewsdb
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:6
+    ports:
+      - "6379:6379"
